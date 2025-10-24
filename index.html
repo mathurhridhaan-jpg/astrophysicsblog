@@ -3,163 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hridhaan's Cosmic Canvas</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <title>Hridhaan's Astrophysics Notes</title>
     
     <style>
         body {
-            background-color: #0c0d10; 
-            color: #f0f0f0; 
-            font-family: 'Lato', sans-serif;
+            background-color: white; 
+            color: black;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.5;
+            width: 80%; 
+            margin: 0 auto; 
+            padding-top: 20px;
         }
 
-        .container {
-            width: 90%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        header {
-            background-color: #1a1a38; 
-            padding: 20px 0;
-            border-bottom: 3px solid #6c5ce7; 
+        h1 {
+            color: #1A5276; 
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
             text-align: center;
-        }
-
-        header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            margin: 0;
-            color: #a29bfe; 
         }
         
-        nav a {
-            color: #f0f0f0;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
+        h2 {
+            color: #2874A6; 
+            margin-top: 30px;
         }
 
-        nav a:hover {
-            color: #00cec9; 
+        p {
+            margin-bottom: 15px;
         }
 
-        .hero {
-            background: #101020; 
-            padding: 60px 0;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .hero h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8em;
-            color: #00cec9;
-            margin-top: 0;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: #6c5ce7; 
-            color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #a29bfe;
-        }
-
-        .post-card {
-            background-color: #1a1a38;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            margin-bottom: 20px;
-        }
-        
-        .post-card h3 {
-            color: #ffffff;
-            margin-top: 0;
-        }
-
-        .post-card a {
-            color: #00cec9;
+        a {
+            color: #007bff;
             text-decoration: none;
             font-weight: bold;
         }
 
-        footer {
-            background-color: #000000;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-            font-size: 0.85em;
-            color: #777;
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <h1>The Cosmic Canvas</h1>
-            <p>Exploring the Universe Through Code</p>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#featured">Featured</a>
-                <a href="#">About Me</a>
-            </nav>
-        </div>
+        <h1>Astrophysics Notes</h1>
+        <p>My simple notes on the cosmos and code.</p>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#data">Key Data</a>
+            <a href="#">About</a>
+        </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <h2 id="featured">Featured Topic: What is a Quasar?</h2>
-                <p>Quasars are extremely luminous active galactic nuclei, powered by supermassive black holes. Dive deep into the physics that makes them the most powerful engines in the universe.</p>
-                <a href="#" class="cta-button">Read the Full Analysis &rarr;</a>
-            </div>
-        </section>
+        <section>
+            <h2>Latest Research Summary</h2>
+            <p>This is where you will write your personal summary of an astrophysics topic. For example, you could discuss the fundamental difference between a star and a planet.</p>
 
-        <section class="container" id="recent">
-            <h2>Recent Insights</h2>
+            <h3>The Structure of Matter</h3>
+            <p>We can summarize the composition of the universe using a very simple set of data points:</p>
             
-            <article class="post-card">
-                <h3>The Simple Math of Orbital Velocity</h3>
-                <p>A breakdown of Newton's law of universal gravitation and how we calculate the speed needed to stay in orbit.</p>
-                <a href="#">Continue Reading</a>
+            <table id="data">
+                <tr>
+                    <th>Component</th>
+                    <th>Approximate Percentage</th>
+                </tr>
+                <tr>
+                    <td>Dark Energy</td>
+                    <td>68%</td>
+                </tr>
+                <tr>
+                    <td>Dark Matter</td>
+                    <td>27%</td>
+                </tr>
+                <tr>
+                    <td>Normal Matter (Atoms)</td>
+                    <td>5%</td>
+                </tr>
+            </table>
+
+            <p>This simple table shows that most of the universe is still a mystery!</p>
+            
+            <article>
+                <h3>Post 1: Dark Matter Explained</h3>
+                <p>Simple explanation of why we think Dark Matter exists, focusing only on gravitational effects, which is observable when looking at galaxy rotation curves.</p>
+                <a href="#">Read More</a>
             </article>
 
-            <article class="post-card">
-                <h3>My First Look at Jupiter (Astrophotography Diary)</h3>
-                <p>Detailed notes on setting up a telescope, processing images, and capturing the Great Red Spot.</p>
-                <a href="#">Continue Reading</a>
-            </article>
-
-            <article class="post-card">
-                <h3>The Hubble Constant Discrepancy Explained</h3>
-                <p>A summary of the ongoing tension between early and late universe measurements of the expansion rate.</p>
-                <a href="#">Continue Reading</a>
+            <article>
+                <h3>Post 2: My HTML Learning Log</h3>
+                <p>A short note documenting the specific tags I used for structure: &lt;h1&gt;, &lt;p&gt;, &lt;a&gt;, and the use of the &lt;style&gt; tag for basic presentation.</p>
+                <a href="#">Read More</a>
             </article>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>Built by Hridhaan | &copy; 2025</p>
-        </div>
+        <p>Website by Hridhaan Mathur | &copy; 2025</p>
     </footer>
 
 </body>
 </html>
+
