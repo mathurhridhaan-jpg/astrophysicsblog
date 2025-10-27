@@ -1,127 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hridhaan's Astrophysics Notes</title>
-    
+    <title>Hridhaan Mathur</title>
     <style>
         body {
-            background-color: white; 
-            color: black;
             font-family: Arial, sans-serif;
+            background-color: #0d1117; 
+            color: #e5e7eb; 
             margin: 0;
             padding: 0;
-            line-height: 1.5;
-            width: 80%; 
-            margin: 0 auto; 
-            padding-top: 20px;
+            scroll-behavior: smooth;
         }
-
-        h1 {
-            color: #1A5276; 
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-            text-align: center;
+        .main-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        h2 {
-            color: #2874A6; 
-            margin-top: 30px;
+        .page-header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(13, 17, 23, 0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .header-content h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00cec9; 
+            margin: 0;
+        }
+        .menu-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+        .menu-links a:hover {
+            color: #3b82f6; 
         }
 
-        p {
-            margin-bottom: 15px;
+        .hero-area {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url('https://placehold.co/1200x800/0d1117/e5e7eb?text=The+Universe+Awaits');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+        }
+        .hero-content {
+            background-color: rgba(13, 17, 23, 0.75);
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 800px;
+            border: 1px solid rgba(0, 206, 209, 0.3);
+        }
+        .hero-content p.subtitle {
+            font-size: 18px;
+            color: #00cec9; 
+            margin-bottom: 5px;
+        }
+        .hero-content h2 {
+            font-size: 56px;
+            font-weight: 800;
+            color: #fff;
+            margin: 10px 0 20px 0;
+            line-height: 1.1;
+        }
+        .hero-content p.quote {
+            font-size: 20px;
+            color: #ccc;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #00cec9;
+            color: #1a1a38;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 9999px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
             text-align: center;
         }
-
-        a {
-            color: #007bff;
-            text-decoration: none;
+        .section-padding.dark-bg {
+            background-color: #101419; 
+        }
+        .section-padding.gray-bg {
+            background-color: #0d1117; 
+        }
+        .section-padding h2 {
+            font-size: 32px;
             font-weight: bold;
+            color: #fff;
+            margin-bottom: 40px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3b82f6; 
+            display: inline-block;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; 
+            justify-content: center;
         }
-
-        table {
-            width: 60%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            border: 1px solid #444; 
-            padding: 8px;
+        .research-item {
+            background-color: #161b22; 
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: calc(33.333% - 15px); 
+            min-width: 280px;
+            border-bottom: 4px solid #3b82f6;
             text-align: left;
-            background-color: #111; 
-            color: white; 
+        }
+        .research-item .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .research-item h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .research-item .description {
+            color: #ccc;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .research-item .skills {
+            font-size: 13px;
+            font-weight: bold;
+            color: #3b82f6;
+            margin-bottom: 15px;
+        }
+        .research-item a {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: #3b82f6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+        
+
+        .skill-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .skill-item {
+            background-color: #1f2730; 
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            flex-basis: calc(50% - 8px); 
+            max-width: 200px;
+            text-align: center;
+            border: 1px solid #30363d;
+        }
+        .skill-item p {
+            font-size: 16px;
+            font-weight: bold;
+            color: #00cec9;
+            margin: 0;
+        }
+        .commitment-text {
+            margin-top: 40px;
+            font-size: 18px;
+            color: #ccc;
         }
 
-        th {
-            background-color: #000; /* Pure black header */
-            color: white;
+        .page-footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #30363d;
+        }
+        .page-footer p {
+            font-size: 12px;
+            color: #777;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            .menu-links {
+                margin-top: 15px;
+            }
+            .menu-links a {
+                margin: 0 10px;
+            }
+            .hero-content h2 {
+                font-size: 40px;
+            }
+            .research-item {
+                width: 100%; 
+                margin-bottom: 20px;
+            }
+            .skill-item {
+                flex-basis: 100%; 
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Astrophysics Notes</h1>
-        <p>My simple notes on the cosmos and code.</p>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#data">Key Data</a>
-            <a href="#">About</a>
-        </nav>
+    <header class="page-header">
+        <div class="main-container header-content">
+            <h1>APPLICANT NAME</h1>
+            <div class="menu-links">
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h2>Latest Research Summary</h2>
-            <p>This is where you will write your personal summary of an astrophysics topic. For example, you could discuss the fundamental difference between a star and a planet.</p>
+    <section class="hero-area">
+        <div class="hero-content">
+            <p class="subtitle">Aspiring Theoretical Astrophysicist</p>
+            <h2>
+                Exploring the Cosmic Frontier
+            </h2>
+            <p class="quote">
+                "The universe is not required to be in perfect harmony with human ambition."
+            </p>
+            <a href="#projects" class="cta-button">
+                View Research Portfolio
+            </a>
+        </div>
+    </section>
 
-            <h3>The Structure of Matter</h3>
-            <p>We can summarize the composition of the universe using a very simple set of data points:</p>
-            
-            <table id="data">
-                <tr>
-                    <th>Component</th>
-                    <th>Approximate Percentage</th>
-                </tr>
-                <tr>
-                    <td>Dark Energy</td>
-                    <td>68%</td>
-                </tr>
-                <tr>
-                    <td>Dark Matter</td>
-                    <td>27%</td>
-                </tr>
-                <tr>
-                    <td>Normal Matter (Atoms)</td>
-                    <td>5%</td>
-                </tr>
-            </table>
+    <section id="projects" class="section-padding dark-bg">
+        <div class="main-container">
+            <h2>Passion Projects & Research</h2>
 
-            <p>This simple table shows that most of the universe is still a mystery!</p>
-            
-            <article>
-                <h3>Post 1: Dark Matter Explained</h3>
-                <p>Simple explanation of why we think Dark Matter exists, focusing only on gravitational effects, which is observable when looking at galaxy rotation curves.</p>
-                <a href="#">Read More</a>
-            </article>
+            <div class="project-grid">
 
-            <article>
-                <h3>Post 2: My HTML Learning Log</h3>
-                <p>A short note documenting the specific tags I used for structure: &lt;h1&gt;, &lt;p&gt;, &lt;a&gt;, and the use of the &lt;style&gt; tag for basic presentation.</p>
-                <a href="#">Read More</a>
-            </article>
-        </section>
-    </main>
+                <div class="research-item">
+                    <div class="icon" style="color:#f97316;">★</div>
+                    <h3>Modeling N-Body Stellar Dynamics</h3>
+                    <p class="description">
+                        A Python-based simulation using the Verlet integration method to model the gravitational interactions and stable orbits of small star clusters over 10,000 timesteps.
+                    </p>
+                    <p class="skills">
+                        Skills Applied: Python, Numerical Methods, Gravitational Physics
+                    </p>
+                    <a href="#">
+                        View Code & Analysis
+                    </a>
+                </div>
 
-    <footer>
-        <p>Website by Hridhaan Mathur | &copy; 2025</p>
+                <div class="research-item">
+                    <div class="icon" style="color:#4ade80;">⛢</div>
+                    <h3>Exoplanet Habitable Zone Report</h3>
+                    <p class="description">
+                        An analytical report investigating the stellar flux and thermal equilibrium of three TRAPPIST-1 system planets to determine their placement within the conservative habitable zone.
+                    </p>
+                    <p class="skills">
+                        Skills Applied: Radiative Transfer, Data Analysis, Scientific Report Writing (LaTeX)
+                    </p>
+                    <a href="#">
+                        Download Full Report
+                    </a>
+                </div>
+
+                <div class="research-item">
+                    <div class="icon" style="color:#a855f7;">⚛</div>
+                    <h3>Review of Quantum Entanglement</h3>
+                    <p class="description">
+                        A critical review summarizing Bell's Theorem and the empirical tests that demonstrate non-local correlation, bridging the gap between quantum mechanics and cosmology.
+                    </p>
+                    <p class="skills">
+                        Skills Applied: Critical Thinking, Literature Synthesis, Theoretical Concepts
+                    </p>
+                    <a href="#">
+                        Read Summary
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding gray-bg">
+        <div class="main-container">
+            <h2>Technical & Academic Toolkit</h2>
+            <div class="skill-grid">
+                <div class="skill-item">
+                    <p>Python (NumPy/SciPy)</p>
+                </div>
+                <div class="skill-item">
+                    <p>Advanced Calculus</p>
+                </div>
+                <div class="skill-item">
+                    <p>Scientific Writing (LaTeX)</p>
+                </div>
+                <div class="skill-item">
+                    <p>C++ Fundamentals</p>
+                </div>
+            </div>
+
+            <p class="commitment-text">
+                Beyond the formulas, my commitment is demonstrated through consistent engagement with open-source science projects and independent study of graduate-level texts.
+            </p>
+        </div>
+    </section>
+
+    <footer class="page-footer">
+        <p>&copy; 2025 APPLICANT NAME. Built with Passion and Basic CSS.</p>
     </footer>
 
 </body>
